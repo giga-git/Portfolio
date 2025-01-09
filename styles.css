@@ -1,0 +1,323 @@
+/************* Basic Resets ***************/
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+blockquote {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul,
+nav ol {
+	list-style-type: none;
+}
+
+/******** Additional resets *********/
+a {
+	text-decoration: none;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+/************ End CSS Reset  *************/
+
+
+/*********** Colors ***********/
+
+:root {
+	--primary: #6C5CE7;
+	/* Purple */
+	--secondary: #FDCB6E;
+	/* Yellow */
+	--accent: #00B894;
+	/* Green */
+	--text-default: #2D3436;
+	/* Dark Gray */
+	--background: #F5F6FA;
+	/* Light Gray */
+}
+
+/************* Basic Page Rules ************/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+	font-family: 'Poppins', sans-serif;
+	color: var(--text-default);
+	background: var(--background);
+}
+
+/************* typography ************/
+
+h1,
+h2,
+h3,
+h4,
+nav {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 2.5rem;
+	margin-bottom: 1.5rem;
+	color: var(--primary);
+}
+
+h2 {
+	font-size: 2rem;
+	margin-bottom: 1.5rem;
+	color: var(--primary);
+}
+
+h3 {
+	font-size: 1.75rem;
+	margin-bottom: 1.5rem;
+	color: var(--primary);
+}
+
+h4 {
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	color: var(--primary);
+}
+
+
+p {
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+}
+
+a {
+	color: var(--accent);
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: var(--primary);
+}
+
+.social {
+	font-size: 1.75rem;
+}
+
+.centered {
+	text-align: center;
+}
+
+/****************** Grid ******************/
+
+.primary {
+	background: var(--primary);
+}
+
+.secondary {
+	background: var(--secondary);
+}
+
+/****************** Header and Main Navigation ****************/
+
+header {
+	padding: 20px;
+	background: var(--primary);
+	color: white;
+}
+
+header .wrapper {
+	display: flex;
+	flex-direction: column-reverse;
+	flex-wrap: wrap;
+}
+
+.logo-container {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-end;
+}
+
+#logo {
+	margin-right: 20px;
+}
+
+#mainnav {
+	margin-bottom: 20px;
+}
+
+#mainnav ul {
+	display: flex;
+	justify-content: center;
+}
+
+#mainnav ul li a {
+	display: block;
+	color: white;
+	border-left: 2px solid white;
+	padding: 0 20px;
+	font-size: 1.25rem;
+	transition: color 0.3s ease;
+}
+
+#mainnav ul li a:hover {
+	color: var(--secondary);
+}
+
+#mainnav ul li:first-of-type a {
+	border: none;
+}
+
+/***************** Section Specific Rules *****************/
+
+#work {
+	background: white;
+	padding: 20px;
+}
+
+#work img,
+.additional-projects img {
+	width: 100%;
+	margin-bottom: 10px;
+	border-radius: 8px;
+}
+
+.featured,
+.projects,
+#page-template #work section {
+	margin-bottom: 40px;
+}
+
+#about-contact,
+.additional-projects {
+	padding: 20px;
+}
+
+#about-contact img {
+	margin-bottom: 10px;
+	border-radius: 8px;
+}
+
+footer {
+	padding: 20px;
+	background: var(--primary);
+	color: white;
+	text-align: center;
+	margin-bottom: 600px;
+}
+
+@media only screen and (min-width: 650px) {
+	#work {
+		padding: 20px 10px;
+	}
+
+	#work article,
+	h2 {
+		padding: 0 10px;
+	}
+
+	.projects,
+	#page-template #work section {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.projects article,
+	#page-template #work section article {
+		width: 50%;
+	}
+
+	.additional-projects .wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.additional-projects h2 {
+		flex-basis: 100%;
+	}
+
+	.additional-projects article {
+		width: 50%;
+		padding: 0 10px;
+	}
+
+	#about-contact {
+		padding: 0;
+	}
+
+	#about-contact .wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: flex-start;
+		padding: 20px 10px;
+	}
+
+	#about-contact .profile-photo {
+		flex: 1;
+		padding: 0 10px;
+		width: 100%;
+	}
+
+	#about-contact article {
+		padding: 0 10px;
+	}
+
+	#about-contact article:first-of-type {
+		flex: 2;
+	}
+
+	#about-contact article:last-of-type {
+		flex-basis: 100%;
+	}
+
+}
+
+@media only screen and (min-width: 768px) {
+
+	.featured {
+		display: flex;
+	}
+
+	.featured article {
+		flex: 1;
+	}
+
+	.additional-projects article {
+		width: 25%;
+	}
+
+	#about-contact .wrapper {
+		flex-wrap: nowrap;
+	}
+
+	#about-contact article:last-of-type {
+		flex: 2;
+		flex-basis: 0;
+	}
+}
+
+@media only screen and (min-width: 1040px) {
+	.wrapper {
+		width: 1020px;
+		margin: auto;
+	}
+
+	header .wrapper {
+		padding: 0 10px;
+	}
+
+	/*Change the width here to 33% if you want three articles in a row*/
+	.projects article {
+		width: 25%;
+	}
+}
